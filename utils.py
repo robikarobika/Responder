@@ -249,9 +249,9 @@ def StartupMessage():
 
 	print ""
 	print color("[+] ", 2, 1) + "Poisoners:"
-	print '    %-27s' % "LLMNR" + enabled
-	print '    %-27s' % "NBT-NS" + enabled
-	print '    %-27s' % "DNS/MDNS" + enabled
+	print '    %-27s' % "LLMNR" + (enabled if settings.Config.poison_llmnr else disabled)
+	print '    %-27s' % "NBT-NS" + (enabled if settings.Config.poison_nbt else disabled)
+	print '    %-27s' % "DNS/MDNS" + (enabled if settings.Config.poison_dns else disabled)
 	print ""
 
 	print color("[+] ", 2, 1) + "Servers:"
