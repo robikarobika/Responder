@@ -85,7 +85,12 @@ class Settings:
 		self.LDAP_On_Off     = self.toBool(config.get('Responder Core', 'LDAP'))
 		self.DNS_On_Off      = self.toBool(config.get('Responder Core', 'DNS'))
 		self.Krb_On_Off      = self.toBool(config.get('Responder Core', 'Kerberos'))
-
+		
+		# Poisoners
+		self.poison_llmnr    = self.toBool(config.get('Responder Core', 'POISON_LLMNR'))
+		self.poison_nbt      = self.toBool(config.get('Responder Core', 'POISON_NBT'))
+		self.poison_dns      = self.toBool(config.get('Responder Core', 'POISON_DNS'))
+		
 		# Db File
 		self.DatabaseFile    = os.path.join(self.ResponderPATH, config.get('Responder Core', 'Database'))
 
